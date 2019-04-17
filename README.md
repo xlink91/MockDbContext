@@ -2,6 +2,12 @@
 
 Persistence Mocks implement IDbContext<TKey>. Each entity implement IBaseEntity<int> to be handle by the mock context. Also mock 
 context implements IDbContextUtility<int> to generate an Id in case we set generateId = true (which is the default value).
+To add a entity to your implementation of DbContext insert a property like:\
+    <p align="center">
+        public ICollection\<Entity\> Entity { get; set; } = new List<Entity>();\
+    </p>
+This property most have the same name as the class Entity.
+
 
 
 Database mock example
