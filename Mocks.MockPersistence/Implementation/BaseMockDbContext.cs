@@ -11,16 +11,19 @@ namespace Mocks.MockPersistence.Implementation
     public class BaseMockDbContext<TKey> : IDbContext<TKey>
     {
         private IDbContextUtility<TKey> DbContextUtility { get; set; }
-        public BaseMockDbContext(IDbContextUtility<TKey> dBContextUtility)
+        private bool GenerateId { get; set; }
+        public BaseMockDbContext(IDbContextUtility<TKey> dBContextUtility, bool generateId = true)
         {
             DbContextUtility = dBContextUtility;
+            GenerateId = generateId;
         }
 
         public void Add<TEntity>(TEntity entity)
             where TEntity : class, IKeyIdentity<TKey>
         {
             ICollection<TEntity> entityCollection = (ICollection<TEntity>)GetCollection(typeof(TEntity));
-            entity.Id = DbContextUtility.GenerateNewKey();
+            if(GenerateId)
+                entity.Id = DbContextUtility.GenerateNewKey();
             entityCollection.Add(entity);
         }
 

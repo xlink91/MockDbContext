@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Mocks</id>
+    <version>1.0.0</version>
+    <title>Mocking Stuffs</title>
+    <authors>DHT</authors>
+    <owners></owners>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/xlink91/MockDbContext</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Mocking your persistence</description>
+    <releaseNotes>First release. MockDbContext allow search fin criteria using lambda expression, CRUD operations</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Persistence</tags>
+	<dependencies>
+	</dependencies>
+  </metadata>
+	<files>
+		<file src="bin/Debug/Mocks.MockPersistence.dll" target="lib/" />
+		<file src="bin/Debug/Mocks.Entities.dll" target="lib/" />
+	</files>
+</package>
